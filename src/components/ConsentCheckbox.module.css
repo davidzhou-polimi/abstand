@@ -1,0 +1,40 @@
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.empty {
+  background: var(--brand-bianco-50);
+  box-shadow: inset 0 0 0 var(--hairline) var(--color-border-strong);
+  border-radius: var(--radius-xs);
+}
+
+.input:focus-visible + .box {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+.text {
+  flex: 1 0 0;
+  min-width: 1px;
+  color: var(--color-text-primary);
+}

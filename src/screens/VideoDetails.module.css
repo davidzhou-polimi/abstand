@@ -1,0 +1,84 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: var(--brand-bianco);
+  color: var(--color-text-primary);
+}
+
+/* «Intestazione dettaglio»: 354 × 32 a (24, 20). */
+.header {
+  position: relative;
+  flex-shrink: 0;
+  height: 32px;
+  margin: 20px var(--space-24) 0;
+}
+
+.path {
+  position: absolute;
+  left: 0;
+  top: 10px;
+}
+
+/* «Chiudi descrizione»: cerchio 44 a (310, −6), color/background/subtle. */
+.close {
+  position: absolute;
+  right: 0;
+  top: -6px;
+  width: 44px;
+  height: 44px;
+  overflow: clip;
+  border-radius: var(--radius-full);
+  background: var(--color-background-subtle);
+  text-align: center;
+}
+
+.close > span {
+  display: block;
+  padding-top: 6px;
+}
+
+/* «Descrizione completa · scorri»: da 72 a 714, poi 24 fino al pulsante. */
+.scroll {
+  flex: 1 1 auto;
+  margin-top: 20px;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: 0 var(--space-24) var(--space-24);
+}
+
+.cover {
+  position: relative;
+  flex-shrink: 0;
+  height: 154px;
+  overflow: clip;
+  border-radius: var(--radius-md);
+  background: var(--brand-rosso-200);
+}
+
+.coverNumber {
+  position: absolute;
+  left: 20px;
+  top: 16px;
+}
+
+.coverLabel {
+  position: absolute;
+  left: 20px;
+  top: 116px;
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+}
+
+.action {
+  flex-shrink: 0;
+  padding: var(--space-24);
+}

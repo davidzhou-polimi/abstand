@@ -1,0 +1,49 @@
+/* 26A1 Marund e Marund Mono (Daniel Wenzel). I file stanno in public/fonts.
+   Il numero dello stile corrisponde al peso: 3000 → 300, 5000 → 500, 7000 → 700. */
+@font-face {
+  font-family: 'Marund';
+  src: url('/fonts/Marund-3000Sharp.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Marund';
+  src: url('/fonts/Marund-5000Sharp.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Marund';
+  src: url('/fonts/Marund-7000Sharp.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Marund Mono';
+  src: url('/fonts/MarundMono-3002Corner.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Marund Mono';
+  src: url('/fonts/MarundMono-5002Corner.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Marund Mono';
+  src: url('/fonts/MarundMono-7002Corner.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: 'Marund', system-ui, sans-serif;
+  --font-mono: 'Marund Mono', ui-monospace, monospace;
+}

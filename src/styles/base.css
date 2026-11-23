@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--brand-bianco);
+  color: var(--color-text-primary);
+  font: 300 16px/24px var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+/* Filo dei bordi da 0,5 px di Figma. Chrome arrotonda un border di 0,5 px a 1 px
+   e cambia le misure: il filo si disegna come ombra interna, che non occupa spazio,
+   e il mezzo pixel si aggiunge al padding, come conta Figma. */
+:root {
+  --hairline: 0.5px;
+}
+
+/* Colonna dell'app: le schermate sono disegnate a 402 px di larghezza. */
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100dvh;
+}

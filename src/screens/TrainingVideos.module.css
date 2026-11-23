@@ -1,0 +1,148 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background: var(--brand-bianco);
+  color: var(--color-text-primary);
+}
+
+/* «Intestazione · Mese 1»: in Figma a 76 px dall'alto, cioè 14 sotto la status bar,
+   alta 190; l'elenco comincia 4 px dopo. */
+.header {
+  flex-shrink: 0;
+  height: 190px;
+  margin: 14px var(--space-24) 4px;
+  overflow: clip;
+}
+
+.title {
+  margin-top: 12px;
+}
+
+.description {
+  margin-top: 8px;
+  color: var(--color-text-secondary);
+}
+
+.summary {
+  margin-top: 12px;
+}
+
+.separator {
+  height: 1px;
+  margin: 20px 0 0;
+  border: 0;
+  background: var(--color-border-subtle);
+}
+
+.list {
+  flex: 1 1 auto;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+.collection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: 0 var(--space-24) var(--space-24);
+}
+
+.week {
+  display: contents;
+}
+
+.weekTitle {
+  height: 36px;
+  padding-top: 12px;
+}
+
+.row {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  height: 116px;
+  overflow: clip;
+  background: var(--brand-bianco);
+}
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 112px;
+  height: 100px;
+  overflow: clip;
+  border-radius: var(--radius-md);
+  background: var(--brand-rosso-200);
+}
+
+.exercise {
+  background: var(--brand-rosso-400);
+}
+
+.coverNumber {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+.open {
+  position: absolute;
+  left: 72px;
+  top: 60px;
+  width: 32px;
+  height: 32px;
+  overflow: clip;
+  border-radius: var(--radius-full);
+  background: var(--color-background-inverse);
+  color: var(--brand-bianco);
+}
+
+.open > span {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 20px;
+}
+
+.text {
+  position: absolute;
+  left: 128px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.meta,
+.videoTitle,
+.cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.meta {
+  top: 2px;
+  white-space: pre-wrap;
+  color: var(--color-text-secondary);
+}
+
+.videoTitle {
+  top: 26px;
+}
+
+.cta {
+  top: 90px;
+  white-space: pre-wrap;
+  color: var(--color-text-secondary);
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 115px;
+  height: 1px;
+  background: var(--color-border-subtle);
+}

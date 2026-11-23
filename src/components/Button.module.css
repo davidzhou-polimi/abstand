@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-16);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.primary {
+  background: var(--color-action-primary);
+  color: var(--brand-bianco);
+}
+
+.inverse {
+  background: var(--brand-bianco);
+  color: var(--brand-nero);
+}
