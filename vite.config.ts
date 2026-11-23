@@ -17,7 +17,7 @@ function spaFallback(): Plugin {
 }
 
 export default defineConfig({
-  /* Cartella del sito: «/» in locale, «/abstand-web/» su GitHub Pages (BASE_PATH nel workflow). */
+  /* Cartella del sito: «/» in locale, «/abstand/» su GitHub Pages (BASE_PATH nel workflow). */
   base: process.env.BASE_PATH ?? '/',
   plugins: [react(), spaFallback()],
 })

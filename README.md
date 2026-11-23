@@ -12,12 +12,11 @@ Vite, React, TypeScript, React Router; CSS Modules con le variabili e gli stili 
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # cartella dist/
-npm run deploy   # pubblica su GitHub Pages
 ```
 
 ## Pubblicazione
 
-Il sito è su https://davidzhou-polimi.github.io/abstand-web/. Questo repository resta privato: `npm run deploy` compila con il percorso `/abstand-web/` e copia `dist/` nel repository pubblico [abstand-web](https://github.com/davidzhou-polimi/abstand-web), servito da GitHub Pages. Si pubblica solo codice già committato.
+Il sito è su https://davidzhou-polimi.github.io/abstand/. A ogni push su `main` il workflow `.github/workflows/deploy.yml` lo compila con il percorso `/abstand/` e lo pubblica su GitHub Pages.
 
 ## Dove sta cosa
 
