@@ -102,9 +102,8 @@ export function VideoPlayer() {
             key={subtitle.lines[0]}
             className={`${styles.line} ${subtitle.active ? styles.active : ''} t-heading-h3`}
           >
-            {subtitle.lines.map((line, index) => (
-              <span key={line}>
-                {index > 0 && <br />}
+            {subtitle.lines.map((line) => (
+              <span key={line} className={styles.subtitleLine}>
                 {line}
               </span>
             ))}

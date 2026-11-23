@@ -56,6 +56,30 @@ img {
   --hairline: 0.5px;
 }
 
+/* Le schermate Figma sono larghe 402 px. Sotto quella larghezza il testo va a capo
+   in punti che Figma non mostra: si evita la parola sola nell'ultima riga.
+   A 402 px e oltre gli a capo restano quelli di Figma. */
+@media (max-width: 401px) {
+  p,
+  h1,
+  h2,
+  span,
+  label,
+  a,
+  button {
+    text-wrap: pretty;
+  }
+
+  .t-heading-h2,
+  .t-heading-h3,
+  .t-heading-h4,
+  .t-body-large,
+  .t-heading-h3 > span,
+  .t-heading-h4 > span {
+    text-wrap: balance;
+  }
+}
+
 /* Colonna dell'app: le schermate sono disegnate a 402 px di larghezza. */
 #root {
   max-width: 430px;

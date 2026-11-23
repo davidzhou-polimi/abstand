@@ -226,6 +226,11 @@
   color: var(--color-text-primary);
 }
 
+/* Una riga per frase spezzata da Figma: sotto i 402 px va a capo da sola. */
+.subtitleLine {
+  display: block;
+}
+
 /* «Indicatore frase attiva»: 3 px a 10 px dal bordo, alto quanto la frase. */
 .active::before {
   content: '';
