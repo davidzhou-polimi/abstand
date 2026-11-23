@@ -3,8 +3,11 @@
   color: var(--brand-nero);
 }
 
+/* In Figma il frame è alto quanto il contenuto, quindi consensi e pulsante stanno
+   sempre in fondo: sullo schermo più alto lo spazio in più va qui, sotto le persone. */
 .content {
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
   gap: var(--space-32);
   width: 100%;

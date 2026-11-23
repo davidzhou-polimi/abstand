@@ -147,8 +147,9 @@
   color: var(--color-text-secondary);
 }
 
-/* «Prosegui nel percorso»: alto 146. */
+/* «Prosegui nel percorso»: alto 146, sempre in fondo allo schermo. */
 .actions {
+  margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
