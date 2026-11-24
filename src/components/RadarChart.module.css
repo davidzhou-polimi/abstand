@@ -1,0 +1,54 @@
+.radar {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.radar text {
+  dominant-baseline: central;
+}
+
+.grid {
+  fill: none;
+  stroke: var(--color-border-subtle);
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Pelle: tratteggio brand/blu/700, punti sui vertici. */
+.skin {
+  fill: none;
+  stroke: var(--brand-blu-700);
+  stroke-width: 2;
+  stroke-dasharray: 3.85 2.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skinDot {
+  fill: var(--brand-blu-700);
+}
+
+/* Volto: linea brand/rosso/700 su area brand/rosso/300 al 35%. */
+.faceArea {
+  fill: var(--brand-rosso-300);
+  opacity: 0.35;
+}
+
+.face {
+  fill: none;
+  stroke: var(--brand-rosso-700);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.name {
+  fill: var(--color-text-primary);
+}
+
+.value {
+  fill: var(--color-text-secondary);
+}

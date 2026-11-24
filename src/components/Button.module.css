@@ -10,7 +10,7 @@
 
 .primary {
   background: var(--color-action-primary);
-  color: var(--brand-bianco);
+  color: var(--color-action-on-primary);
 }
 
 .inverse {

@@ -11,7 +11,7 @@ export const programMonths: ProgramMonth[] = [
   {
     label: 'MONTH 1',
     title: 'Gaze',
-    promise: 'See others’ pain without making it your own',
+    promise: 'See others’ emotions without making it your own',
     stats: '12 lessons, 4 guided exercises, 3 h',
     locked: false,
   },

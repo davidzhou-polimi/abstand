@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router'
 import { TestResult } from './screens/TestResult'
+import { TestReport } from './screens/TestReport'
 import { ProfileCreation } from './screens/ProfileCreation'
 import { PersonalizedProgram } from './screens/PersonalizedProgram'
 import { OnboardingComplete } from './screens/OnboardingComplete'
@@ -23,6 +24,7 @@ export function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<TestResult />} />
+        <Route path="/report" element={<TestReport />} />
         <Route path="/profile" element={<ProfileCreation />} />
         <Route path="/program" element={<PersonalizedProgram />} />
         <Route path="/program/active" element={<OnboardingComplete />} />

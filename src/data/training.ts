@@ -21,7 +21,7 @@ export const month1 = {
   number: '01',
   title: 'Gaze',
   /* A capo come in Figma. */
-  description: ['See others’ pain', 'without making it your own.'],
+  description: ['See others’ emotions', 'without making it your own.'],
   summary: '12 videos · 4 guided exercises · 3 h',
   weeks: [
     {

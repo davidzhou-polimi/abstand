@@ -40,27 +40,28 @@
   gap: 4px;
   width: 100%;
   text-align: center;
-  color: var(--brand-nero);
+  color: var(--color-text-primary);
 }
 
 .name {
   font-weight: 500;
 }
 
-/* In Figma il riquadro è largo 355 su una colonna di 354 (sporge di 0,5 per lato). */
+/* In Figma il riquadro è largo 356 su una colonna di 354 (sporge di 1 px per lato),
+   bordo 1 px color/border/default compreso nella misura. */
 .description {
-  width: calc(100% + 1px);
-  margin-inline: -0.5px;
-  padding: calc(var(--space-24) + var(--hairline));
-  background: var(--brand-bianco-50);
-  box-shadow: inset 0 0 0 var(--hairline) var(--brand-nero-500);
+  width: calc(100% + 2px);
+  margin-inline: -1px;
+  padding: var(--space-24);
+  background: var(--color-background-surface);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--radius-lg);
   text-align: center;
-  color: var(--brand-nero);
+  color: var(--color-text-primary);
 }
 
 .closing {
   width: 100%;
   text-align: center;
-  color: var(--brand-nero);
+  color: var(--color-text-primary);
 }

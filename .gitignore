@@ -3,3 +3,7 @@ dist
 .claude/
 *.log
 .DS_Store
+
+# Cabina: il programma è della collega e resta fuori dal repository
+# (il formato del QR tra cabina e webapp è in docs/QR.md).
+cabina/

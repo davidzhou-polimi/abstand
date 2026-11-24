@@ -6,6 +6,9 @@ import './styles/tokens.css'
 import './styles/typography.css'
 import './styles/base.css'
 import { App } from './App'
+import { captureFromUrl } from './data/payload'
+
+captureFromUrl()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

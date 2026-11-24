@@ -1,0 +1,100 @@
+/* «Screen»: padding 24 24 32, spazio 32 tra contenuto e pulsante. */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  min-height: 100dvh;
+  padding: var(--space-24) var(--space-24) var(--space-32);
+  background: var(--color-background-canvas);
+  color: var(--color-text-primary);
+}
+
+.content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+}
+
+.pre {
+  white-space: pre-wrap;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* «Highest reactivity»: brand/rosso/100, padding 20 16 16. */
+.highlight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-20) var(--space-16) var(--space-16);
+  border-radius: var(--radius-md);
+  background: var(--brand-rosso-100);
+}
+
+.highlightRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+/* Schede: color/background/surface, bordo 1 px color/border/default. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  background: var(--color-background-surface);
+}
+
+.cardHeading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.legend {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.legend p {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: var(--space-8);
+  white-space: nowrap;
+}
+
+/* La chiave in Figma è 18 × 12 con l'SVG che sporge di 1 px per lato. */
+.legend img {
+  margin-inline: -1px;
+}
+
+.measures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  margin: 0;
+}
+
+.measures div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.measures dd {
+  margin: 0;
+}

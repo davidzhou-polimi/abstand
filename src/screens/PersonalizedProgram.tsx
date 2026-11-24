@@ -25,7 +25,7 @@ export function PersonalizedProgram() {
                   <p className="t-label-small">{month.label}</p>
                   <h2 className={styles.monthTitle}>{month.title}</h2>
                   <p className="t-body-small">{month.promise}</p>
-                  <p className={`${styles.stats} t-label-small-3000`}>{month.stats}</p>
+                  <p className={`${styles.stats} t-mono-small`}>{month.stats}</p>
                 </div>
                 <span className={styles.line} aria-hidden="true" />
               </li>

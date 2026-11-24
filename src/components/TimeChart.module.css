@@ -1,0 +1,60 @@
+/* In Figma i grafici sono larghi 322 in una colonna di 320: sporgono di 2 px a destra. */
+.chart {
+  display: block;
+  width: calc(100% + 2px);
+  height: auto;
+  overflow: visible;
+}
+
+.chart text {
+  dominant-baseline: central;
+}
+
+.title {
+  fill: var(--color-text-primary);
+}
+
+.axis {
+  fill: var(--color-text-secondary);
+}
+
+/* «Stimulus shown»: brand/rosso/50 */
+.stimulus {
+  fill: var(--brand-rosso-50);
+}
+
+.grid {
+  stroke: var(--color-border-subtle);
+  stroke-width: 1;
+}
+
+/* «Baseline»: tratteggio color/border/strong */
+.baseline {
+  stroke: var(--color-border-strong);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+  stroke-linecap: round;
+}
+
+.line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.skin {
+  stroke: var(--brand-blu-700);
+}
+
+.face {
+  stroke: var(--brand-rosso-700);
+}
+
+.peak {
+  fill: var(--brand-blu-700);
+}
+
+.peakLabel {
+  fill: var(--color-text-primary);
+}

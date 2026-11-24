@@ -26,12 +26,14 @@ Il sito è su https://davidzhou-polimi.github.io/abstand/. A ogni push su `main`
 - `src/components/`: i componenti Figma (Button, Outline Button, Form Input, Important Person Card, Accettazione termini e condizioni) e la Grana.
 - `src/data/`: testi e contenuti (profilo, programma, video del mese 1).
 - `src/screens/`: una schermata per frame Figma.
+- `docs/QR.md`: il formato del QR con cui la cabina (`muting.py` e la sua dashboard, gestiti dalla collega e tenuti fuori dal repository) porta il risultato alla webapp.
 
 ## Schermate
 
 | Percorso | Frame Figma |
 | --- | --- |
-| `/` | Test result (174:258) |
+| `/` | Test result 1 (213:532) |
+| `/report` | Test result 2 (213:568) |
 | `/profile` | Profile creation (174:399) |
 | `/program` | Personalized program (173:333) |
 | `/program/active` | Onboarding complete (173:309) |

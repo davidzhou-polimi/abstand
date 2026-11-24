@@ -1,22 +1,11 @@
-/* Variabili del file Figma «Sito» (collezioni Primitivi, Dimensioni, Semantici).
-   Stessi nomi: «brand/bianco/50» diventa --brand-bianco-50. Gli alias restano alias. */
+/* Variabili del file Figma «Sito» (collezioni Primitivi, Dimensioni, Semantici), lette il 2026-11-24.
+   Stessi nomi: «brand/neutro/50» diventa --brand-neutro-50. Gli alias restano alias. */
 :root {
   /* Primitivi */
   --brand-blu: #4b7397;
   --brand-rosso: #c04908;
   --brand-nero: #000000;
-  --brand-bianco: var(--brand-bianco-50);
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #333333;
-  --color-neutral-800: #1a1a1a;
-  --color-neutral-900: var(--brand-nero);
+  --brand-bianco: var(--brand-neutro-50);
   --color-blue-50: #eff6ff;
   --color-blue-100: #dbeafe;
   --color-blue-200: #bfdbfe;
@@ -61,6 +50,16 @@
   --color-red-800: #991b1b;
   --color-red-900: #7f1d1d;
   --color-red-950: #450a0a;
+  --brand-neutro-50: #fdfbf7;
+  --brand-neutro-100: #f9f4ea;
+  --brand-neutro-200: #e9e4db;
+  --brand-neutro-300: #d1cdc5;
+  --brand-neutro-400: #b1ada6;
+  --brand-neutro-500: #8f8c86;
+  --brand-neutro-600: #6b6964;
+  --brand-neutro-700: #4c4a47;
+  --brand-neutro-800: #2f2e2b;
+  --brand-neutro-900: #171615;
   --brand-rosso-50: #fdece5;
   --brand-rosso-100: #fbdacc;
   --brand-rosso-200: #f2b69b;
@@ -81,26 +80,6 @@
   --brand-blu-700: #304458;
   --brand-blu-800: #232f3b;
   --brand-blu-900: #161b21;
-  --brand-nero-50: var(--color-neutral-50);
-  --brand-nero-100: var(--color-neutral-100);
-  --brand-nero-200: var(--color-neutral-200);
-  --brand-nero-300: var(--color-neutral-300);
-  --brand-nero-400: var(--color-neutral-400);
-  --brand-nero-500: var(--color-neutral-500);
-  --brand-nero-600: var(--color-neutral-600);
-  --brand-nero-700: var(--color-neutral-700);
-  --brand-nero-800: var(--color-neutral-800);
-  --brand-nero-900: var(--brand-nero);
-  --brand-bianco-50: #fdfbf7;
-  --brand-bianco-100: #f9f4ea;
-  --brand-bianco-200: #e9e4db;
-  --brand-bianco-300: #d1cdc5;
-  --brand-bianco-400: #b1ada6;
-  --brand-bianco-500: #8f8c86;
-  --brand-bianco-600: #6b6964;
-  --brand-bianco-700: #4c4a47;
-  --brand-bianco-800: #2f2e2b;
-  --brand-bianco-900: #171615;
 
   /* Dimensioni */
   --space-0: 0px;
@@ -127,24 +106,24 @@
   --radius-full: 9999px;
 
   /* Semantici */
-  --color-background-canvas: var(--color-neutral-50);
-  --color-background-surface: var(--color-neutral-0);
-  --color-background-subtle: var(--color-neutral-50);
-  --color-background-inverse: var(--color-neutral-900);
-  --color-text-primary: var(--color-neutral-900);
-  --color-text-secondary: var(--color-neutral-600);
-  --color-text-muted: var(--color-neutral-500);
-  --color-text-inverse: var(--color-neutral-0);
-  --color-text-link: var(--color-neutral-900);
-  --color-border-default: var(--color-neutral-300);
-  --color-border-subtle: var(--color-neutral-200);
-  --color-border-strong: var(--color-neutral-500);
-  --color-action-primary: var(--color-neutral-900);
-  --color-action-primary-hover: var(--color-neutral-800);
-  --color-action-on-primary: var(--color-neutral-0);
-  --color-action-disabled: var(--color-neutral-200);
-  --color-action-on-disabled: var(--color-neutral-600);
-  --color-focus-ring: var(--color-neutral-900);
+  --color-background-canvas: var(--brand-neutro-50);
+  --color-background-surface: var(--brand-neutro-50);
+  --color-background-subtle: var(--brand-neutro-100);
+  --color-background-inverse: var(--brand-neutro-900);
+  --color-text-primary: var(--brand-neutro-900);
+  --color-text-secondary: var(--brand-neutro-700);
+  --color-text-muted: var(--brand-neutro-600);
+  --color-text-inverse: var(--brand-neutro-50);
+  --color-text-link: var(--brand-neutro-900);
+  --color-border-default: var(--brand-neutro-300);
+  --color-border-subtle: var(--brand-neutro-200);
+  --color-border-strong: var(--brand-neutro-500);
+  --color-action-primary: var(--brand-neutro-900);
+  --color-action-primary-hover: var(--brand-neutro-800);
+  --color-action-on-primary: var(--brand-neutro-50);
+  --color-action-disabled: var(--brand-neutro-200);
+  --color-action-on-disabled: var(--brand-neutro-600);
+  --color-focus-ring: var(--brand-neutro-900);
   --color-status-success-background: var(--color-green-50);
   --color-status-success-foreground: var(--color-green-800);
   --color-status-warning-background: var(--color-amber-50);
@@ -153,4 +132,12 @@
   --color-status-error-foreground: var(--color-red-800);
   --color-status-info-background: var(--color-blue-50);
   --color-status-info-foreground: var(--color-blue-800);
+  --color-text-on-light-primary: var(--color-text-primary);
+  --color-text-on-light-secondary: var(--color-text-secondary);
+  --color-text-on-light-muted: var(--color-text-muted);
+  --color-text-on-light-link: var(--color-text-link);
+  --color-text-on-dark-primary: var(--color-text-inverse);
+  --color-text-on-dark-secondary: var(--brand-neutro-200);
+  --color-text-on-dark-muted: var(--brand-neutro-400);
+  --color-text-on-dark-link: var(--color-text-inverse);
 }
