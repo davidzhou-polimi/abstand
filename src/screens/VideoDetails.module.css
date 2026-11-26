@@ -2,83 +2,74 @@
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  background: var(--brand-bianco);
+  background: var(--color-background-canvas);
   color: var(--color-text-primary);
 }
 
-/* «Intestazione dettaglio»: 354 × 32 a (24, 20). */
+/* «Intestazione dettaglio»: padding 24 / 20, etichetta a sinistra e chiusura a destra. */
 .header {
-  position: relative;
+  display: flex;
   flex-shrink: 0;
-  height: 32px;
-  margin: 20px var(--space-24) 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-20) var(--space-24);
+  background: var(--color-background-surface);
 }
 
-.path {
-  position: absolute;
-  left: 0;
-  top: 10px;
-}
-
-/* «Chiudi descrizione»: cerchio 44 a (310, −6), color/background/subtle. */
 .close {
-  position: absolute;
-  right: 0;
-  top: -6px;
-  width: 44px;
-  height: 44px;
-  overflow: clip;
-  border-radius: var(--radius-full);
-  background: var(--color-background-subtle);
-  text-align: center;
+  width: 24px;
+  height: 24px;
 }
 
-.close > span {
-  display: block;
-  padding-top: 6px;
+/* Fascia brand/rosso/400: padding 96 sopra, 24 sotto e ai lati; numero e titolo in fondo. */
+.band {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-96) var(--space-24) var(--space-24);
+  background: var(--brand-rosso-400);
 }
 
-/* «Descrizione completa · scorri»: da 72 a 714, poi 24 fino al pulsante. */
+.band > p {
+  white-space: nowrap;
+}
+
+.bandText {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  min-width: 1px;
+}
+
+.week {
+  color: var(--brand-rosso-800);
+}
+
+/* «Descrizione completa · scorri»: padding 24 / 32, sezioni a 32 l’una dall’altra. */
 .scroll {
+  display: flex;
   flex: 1 1 auto;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: var(--space-32);
+  min-height: 0;
+  padding: var(--space-32) var(--space-24);
   overflow-x: clip;
   overflow-y: auto;
 }
 
-.content {
+.section {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
-  padding: 0 var(--space-24) var(--space-24);
-}
-
-.cover {
-  position: relative;
-  flex-shrink: 0;
-  height: 154px;
-  overflow: clip;
-  border-radius: var(--radius-md);
-  background: var(--brand-rosso-200);
-}
-
-.coverNumber {
-  position: absolute;
-  left: 20px;
-  top: 16px;
-}
-
-.coverLabel {
-  position: absolute;
-  left: 20px;
-  top: 116px;
 }
 
 .secondary {
   color: var(--color-text-secondary);
 }
 
+/* Pulsante largo 355 al centro, 24 dal fondo. */
 .action {
   flex-shrink: 0;
-  padding: var(--space-24);
+  padding: 0 23.5px var(--space-24);
 }

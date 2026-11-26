@@ -1,11 +1,10 @@
 import { Link, Navigate, useParams } from 'react-router'
 import { OutlineButton } from '../components/OutlineButton'
+import closeIcon from '../assets/icon-close.svg'
 import { findVideo, month1, videoDetails } from '../data/training'
 import styles from './VideoDetails.module.css'
 
-/* Figma: «Video 01 · Observe, don’t absorb · Details» (174:583).
-   Il frame inglese è la copia ingrandita (429 px) di quello italiano da 402:
-   qui le misure sono quelle a 402. */
+/* Figma: «Video 01 · Observe, don’t absorb · Details» (434:5065). */
 export function VideoDetails() {
   const { number = '' } = useParams()
   const found = findVideo(number)
@@ -16,36 +15,41 @@ export function VideoDetails() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <p className={`${styles.path} t-label-small`}>
-          MONTH {month1.number} / VIDEO {video.number}
+        <p className="t-label-small">
+          MONTH {month1.number} / LESSON {video.number}
         </p>
         <Link to="/training" className={styles.close} aria-label="Close">
-          <span className="t-heading-h4" aria-hidden="true">
-            ×
-          </span>
+          <img src={closeIcon} width={24} height={24} alt="" />
         </Link>
       </header>
-      <div className={styles.scroll}>
-        <div className={styles.content}>
-          <div className={styles.cover}>
-            <p className={`${styles.coverNumber} t-heading-h1`}>{video.number}</p>
-            <p className={`${styles.coverLabel} t-label-small`}>LESSON</p>
-          </div>
-          <h1 className="t-heading-h4">{video.title}</h1>
-          <p className={`${styles.secondary} t-caption`}>
+
+      <div className={styles.band}>
+        <p className="t-heading-h1">{video.number}</p>
+        <div className={styles.bandText}>
+          <p className={`${styles.week} t-caption`}>
             WEEK {details.week} · {video.minutes} MIN
           </p>
-          <h2 className="t-label-small">IN THIS VIDEO</h2>
-          <p className={`${styles.secondary} t-body-default`}>{details.inThisVideo}</p>
-          <h2 className="t-label-small">WHAT YOU’LL PRACTICE</h2>
-          <p className={`${styles.secondary} t-body-default`}>{details.whatYoullPractice}</p>
-          <h2 className="t-label-small">AFTER THE VIDEO</h2>
-          <p className={`${styles.secondary} t-body-default`}>{details.afterTheVideo}</p>
-          <p className={`${styles.secondary} t-body-small`}>Demo preview: video playback is unavailable.</p>
+          <h1 className="t-heading-h4">{video.title}</h1>
         </div>
       </div>
+
+      <div className={styles.scroll}>
+        <section className={styles.section}>
+          <h2 className="t-label-small">IN THIS LESSON</h2>
+          <p className={`${styles.secondary} t-body-default`}>{details.inThisVideo}</p>
+        </section>
+        <section className={styles.section}>
+          <h2 className="t-label-small">WHAT YOU’LL PRACTICE</h2>
+          <p className={`${styles.secondary} t-body-default`}>{details.whatYoullPractice}</p>
+        </section>
+        <section className={styles.section}>
+          <h2 className="t-label-small">AFTER THE LESSON</h2>
+          <p className={`${styles.secondary} t-body-default`}>{details.afterTheVideo}</p>
+        </section>
+      </div>
+
       <div className={styles.action}>
-        <OutlineButton tone="dark" to={`/training/video/${video.number}/player`}>
+        <OutlineButton tone="dark" size="short" to={`/training/video/${video.number}/player`}>
           Start lesson
         </OutlineButton>
       </div>

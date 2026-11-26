@@ -1,9 +1,71 @@
+/* Fondo finale: da brand/rosso/500 a brand/blu/500 (al 89,359%), con la «Grana». */
 .page {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  background: linear-gradient(to bottom, var(--brand-rosso-500) 0%, var(--brand-blu-500) 93.146%);
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--brand-rosso-500) 0%, var(--brand-blu-500) 89.359%);
+}
+
+/* Tempi dell'animazione Figma (3,5 s): le percentuali sono quelle dei suoi fotogrammi. */
+.veil,
+.ringsFade,
+.rings,
+.created,
+.title,
+.action {
+  animation-duration: 3.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+/* «Motion · fondo iniziale»: color/background/canvas, svanisce tra 0,55 s e 1,65 s. */
+.veil {
+  position: absolute;
+  inset: 0;
+  background: var(--color-background-canvas);
+  animation-name: veil;
+}
+
+@keyframes veil {
+  0% { opacity: 1; }
+  15.71% { opacity: 1; animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+  47.14%, 100% { opacity: 0; }
+}
+
+/* «Motion · anelli in espansione»: 595 × 793, centrati sullo schermo, opacità 56%. */
+.ringsFade {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 595px;
+  height: 793px;
+  /* In Figma il riquadro è spostato di 14,5 px a sinistra: il centro dell'ingrandimento
+     (52,437% / 50,063%) cade così al centro dello schermo. */
+  margin: -396.5px 0 0 -312px;
+  pointer-events: none;
+  animation-name: rings-fade;
+}
+
+@keyframes rings-fade {
+  0% { opacity: 0.56; }
+  24.29% { opacity: 0.56; animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+  52.86%, 100% { opacity: 0; }
+}
+
+.rings {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: 52.437% 50.063%;
+  animation-name: rings-grow;
+}
+
+@keyframes rings-grow {
+  0% { transform: scale(1); }
+  5.14% { transform: scale(1); animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+  51.43%, 100% { transform: scale(6.5); }
 }
 
 .screen {
@@ -11,31 +73,60 @@
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  align-items: center;
-  gap: var(--space-24);
   padding: var(--space-24) var(--space-24) var(--space-40);
 }
 
-.content {
+/* Testo a 218 px dall'inizio del contenuto. */
+.message {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-
-.message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: var(--space-8);
-  padding: 180px 0;
+  padding-top: 218px;
   text-align: center;
-  color: var(--brand-bianco);
+  color: var(--color-text-inverse);
 }
 
-.waiting {
-  width: 100%;
-  text-align: center;
-  color: var(--brand-bianco);
+.created {
+  animation-name: rise-8;
+  animation-timing-function: linear;
+}
+
+@keyframes rise-8 {
+  0% { opacity: 0; transform: translateY(8px); }
+  45.71% { opacity: 0; transform: translateY(8px); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  61.43%, 100% { opacity: 1; transform: none; }
+}
+
+.title {
+  animation-name: rise-14;
+}
+
+@keyframes rise-14 {
+  0% { opacity: 0; transform: translateY(14px); }
+  50.86% { opacity: 0; transform: translateY(14px); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  68.57%, 100% { opacity: 1; transform: none; }
+}
+
+.action {
+  animation-name: rise-12;
+}
+
+@keyframes rise-12 {
+  0% { opacity: 0; transform: translateY(12px); }
+  61.43% { opacity: 0; transform: translateY(12px); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  78.57%, 100% { opacity: 1; transform: none; }
+}
+
+/* Chi riduce le animazioni vede subito lo stato finale. */
+@media (prefers-reduced-motion: reduce) {
+  .veil,
+  .ringsFade,
+  .rings,
+  .created,
+  .title,
+  .action {
+    animation-duration: 1ms;
+  }
 }

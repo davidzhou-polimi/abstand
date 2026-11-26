@@ -1,0 +1,168 @@
+/* Misure del frame Figma a 402 × 226: 1 px di Figma = 1 --u. */
+.player {
+  --u: calc(100cqw / 402);
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 402 / 226;
+  overflow: hidden;
+  background: var(--color-background-inverse);
+  color: var(--color-text-inverse);
+}
+
+/* Dentro il player le unità vengono dal player stesso. */
+.player > * {
+  position: absolute;
+}
+
+.rounded {
+  border-radius: var(--radius-md);
+}
+
+.label,
+.cc span,
+.rewind span,
+.forward span,
+.speed {
+  margin: 0;
+  font: 500 calc(12 * var(--u)) / calc(12 * var(--u)) var(--font-sans);
+}
+
+.label {
+  left: calc(24 * var(--u));
+  top: calc(20 * var(--u));
+}
+
+.cc {
+  left: calc(294 * var(--u));
+  top: calc(14 * var(--u));
+  width: calc(32 * var(--u));
+  height: calc(26 * var(--u));
+  border-radius: var(--radius-xs);
+  background: var(--color-background-surface);
+  color: var(--color-text-primary);
+}
+
+.cc span {
+  position: absolute;
+  left: 0;
+  top: calc(7 * var(--u));
+  width: 100%;
+  text-align: center;
+}
+
+.player img {
+  display: block;
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+}
+
+.settings {
+  left: calc(350 * var(--u));
+  top: calc(15 * var(--u));
+}
+
+.play {
+  left: calc(171 * var(--u));
+  top: calc(76 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(60 * var(--u));
+  height: calc(60 * var(--u));
+  border-radius: var(--radius-full);
+  background: var(--color-background-surface);
+}
+
+.rewind,
+.forward {
+  top: calc(94 * var(--u));
+}
+
+.rewind {
+  left: calc(100 * var(--u));
+}
+
+.forward {
+  left: calc(278 * var(--u));
+}
+
+.rewind span,
+.forward span {
+  position: absolute;
+  left: 0;
+  top: calc(8 * var(--u));
+  width: 100%;
+  text-align: center;
+}
+
+.track {
+  left: calc(24 * var(--u));
+  top: calc(174 * var(--u));
+  width: calc(354 * var(--u));
+  height: calc(3 * var(--u));
+  border-radius: var(--radius-full);
+  background: var(--color-text-secondary);
+}
+
+.track > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.buffered {
+  width: calc(var(--buffered) * 100%);
+  background: var(--color-text-muted);
+}
+
+.elapsed {
+  width: calc(var(--progress) * 100%);
+  background: var(--player-progress);
+}
+
+.thumb {
+  left: calc(var(--progress) * 100% - 5 * var(--u)) !important;
+  top: calc(-3.5 * var(--u)) !important;
+  width: calc(10 * var(--u));
+  height: calc(10 * var(--u)) !important;
+  background: var(--player-progress);
+}
+
+/* Avanzamento: brand/neutro/300 nella lezione, brand/rosso/300 nel video introduttivo. */
+.lesson {
+  --player-progress: var(--brand-neutro-300);
+}
+
+.intro {
+  --player-progress: var(--brand-rosso-300);
+}
+
+.volume,
+.fullscreen {
+  top: calc(190 * var(--u));
+}
+
+.volume {
+  left: calc(24 * var(--u));
+}
+
+.fullscreen {
+  left: calc(350 * var(--u));
+}
+
+.time {
+  left: calc(60 * var(--u));
+  top: calc(194 * var(--u));
+  margin: 0;
+  font: 300 calc(12 * var(--u)) / calc(18 * var(--u)) var(--font-sans);
+}
+
+.speed {
+  left: calc(296 * var(--u));
+  top: calc(194 * var(--u));
+  width: calc(40 * var(--u));
+  text-align: left;
+}

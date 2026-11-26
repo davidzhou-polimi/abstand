@@ -30,12 +30,12 @@ export function TestReport() {
         </header>
 
         <section className={styles.highlight}>
-          <p className={`${styles.secondary} t-label-small`}>YOUR MOST SENSITIVE AREA</p>
+          <p className={`${styles.onDarkSecondary} t-label-small`}>YOUR MOST SENSITIVE AREA</p>
           <div className={styles.highlightRow}>
             <h2 className="t-heading-h4">{AREA_NAME[top]}</h2>
             <p className="t-label-large">{areaScore(report.areas[top]).toFixed(2)}&nbsp;/&nbsp;1</p>
           </div>
-          {AREA_SENTENCE[top] && <p className={`${styles.secondary} t-body-small`}>{AREA_SENTENCE[top]}</p>}
+          {AREA_SENTENCE[top] && <p className={`${styles.onDarkSecondary} t-new-short`}>{AREA_SENTENCE[top]}</p>}
         </section>
 
         <section className={styles.card}>

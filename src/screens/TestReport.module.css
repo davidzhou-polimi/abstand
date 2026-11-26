@@ -30,14 +30,19 @@
   gap: var(--space-4);
 }
 
-/* «Highest reactivity»: brand/rosso/100, padding 20 16 16. */
+/* «Highest reactivity»: brand/rosso/500, testo chiaro, padding 20 16 16. */
 .highlight {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   padding: var(--space-20) var(--space-16) var(--space-16);
   border-radius: var(--radius-md);
-  background: var(--brand-rosso-100);
+  background: var(--brand-rosso-500);
+  color: var(--color-text-inverse);
+}
+
+.onDarkSecondary {
+  color: var(--color-text-on-dark-secondary);
 }
 
 .highlightRow {
@@ -66,12 +71,14 @@
 
 .legend {
   display: flex;
-  gap: var(--space-12);
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-12);
 }
 
+/* A 402 px stanno su una riga come in Figma; più stretto vanno a capo. */
 .legend p {
   display: flex;
-  flex: 1 0 0;
+  flex: 1 0 auto;
   align-items: center;
   gap: var(--space-8);
   white-space: nowrap;

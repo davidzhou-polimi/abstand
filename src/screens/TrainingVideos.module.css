@@ -1,15 +1,13 @@
+/* La pagina scorre tutta: in Figma l'elenco è lungo quanto i suoi video (frame alto 2010). */
 .page {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-  background: var(--brand-bianco);
+  min-height: 100dvh;
+  background: var(--color-background-canvas);
   color: var(--color-text-primary);
 }
 
 /* «Intestazione · Mese 1»: in Figma a 76 px dall'alto, cioè 14 sotto la status bar,
    alta 190; l'elenco comincia 4 px dopo. */
 .header {
-  flex-shrink: 0;
   height: 190px;
   margin: 14px var(--space-24) 4px;
   overflow: clip;
@@ -25,20 +23,14 @@
 }
 
 .summary {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .separator {
   height: 1px;
   margin: 20px 0 0;
   border: 0;
-  background: var(--color-border-subtle);
-}
-
-.list {
-  flex: 1 1 auto;
-  overflow-x: clip;
-  overflow-y: auto;
+  background: var(--color-border-strong);
 }
 
 .collection {
@@ -63,9 +55,10 @@
   flex-shrink: 0;
   height: 116px;
   overflow: clip;
-  background: var(--brand-bianco);
+  background: var(--color-background-surface);
 }
 
+/* Copertine: lezione brand/rosso/400, esercizio brand/rosso/600 (numero chiaro). */
 .cover {
   position: absolute;
   left: 0;
@@ -74,11 +67,16 @@
   height: 100px;
   overflow: clip;
   border-radius: var(--radius-md);
-  background: var(--brand-rosso-200);
+}
+
+.lesson {
+  background: var(--brand-rosso-400);
+  color: var(--color-text-primary);
 }
 
 .exercise {
-  background: var(--brand-rosso-400);
+  background: var(--brand-rosso-600);
+  color: var(--color-text-inverse);
 }
 
 .coverNumber {
@@ -87,23 +85,18 @@
   top: 6px;
 }
 
-.open {
+/* Lezione fatta: velo bianco al 65% e spunta in basso a destra. */
+.doneVeil {
   position: absolute;
-  left: 72px;
-  top: 60px;
-  width: 32px;
-  height: 32px;
-  overflow: clip;
-  border-radius: var(--radius-full);
-  background: var(--color-background-inverse);
-  color: var(--brand-bianco);
+  inset: 0;
+  border-radius: var(--radius-md);
+  background: rgb(255 255 255 / 0.65);
 }
 
-.open > span {
+.doneIcon {
   position: absolute;
-  left: 10px;
-  top: 0;
-  width: 20px;
+  left: 85.73px;
+  top: 73.41px;
 }
 
 .text {
@@ -133,16 +126,17 @@
 }
 
 .cta {
-  top: 90px;
+  top: 82px;
   white-space: pre-wrap;
   color: var(--color-text-secondary);
 }
 
+/* «Divisore»: color/border/default; il «Separatore» sotto l'intestazione è color/border/strong. */
 .divider {
   position: absolute;
   left: 0;
   right: 0;
   top: 115px;
   height: 1px;
-  background: var(--color-border-subtle);
+  background: var(--color-border-default);
 }

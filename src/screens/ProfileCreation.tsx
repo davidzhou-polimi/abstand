@@ -8,18 +8,16 @@ import { OutlineButton } from '../components/OutlineButton'
 import frame from './Screen.module.css'
 import styles from './ProfileCreation.module.css'
 
-/* Figma: «Profile creation» (174:399). I valori nei campi e le due persone
-   sono quelli del mock. */
-const people = [
-  { name: 'Gilda Mattei', relation: 'Mother', frequency: 'Every day' },
-  { name: 'Omar Bonelli', relation: 'Best friend', frequency: 'Every week' },
-]
+/* Figma: «Profile creation» (174:399). I campi partono vuoti: i valori del mock
+   (Mario Rossi, Gilda Mattei, Omar Bonelli) erano solo esempi. */
+type Person = { name: string; relation: string; frequency: string }
+const people: Person[] = []
 
 export function ProfileCreation() {
   const navigate = useNavigate()
-  const [firstName, setFirstName] = useState('Mario')
-  const [lastName, setLastName] = useState('Rossi')
-  const [email, setEmail] = useState('mariorossi@email.com')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
   const [dataConsent, setDataConsent] = useState(false)
   const [termsAccepted, setTermsAccepted] = useState(false)
 

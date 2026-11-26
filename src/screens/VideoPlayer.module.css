@@ -2,242 +2,80 @@
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  background: var(--brand-bianco);
+  background: var(--color-background-canvas);
   color: var(--color-text-primary);
 }
 
-/* «Navigazione video»: alta 64. */
+/* «Navigazione video»: padding 24 / 20, spazio 19. */
 .nav {
-  position: relative;
-  flex-shrink: 0;
-  height: 64px;
-  overflow: clip;
-  background: var(--brand-bianco);
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  padding: var(--space-20) var(--space-24);
+  background: var(--color-background-surface);
 }
 
-.back,
-.more {
-  position: absolute;
-  top: 20px;
+.icon {
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
-}
-
-.back {
-  left: 24px;
-}
-
-.more {
-  right: 24px;
 }
 
 .path {
-  position: absolute;
-  left: 64px;
-  top: 26px;
+  flex: 1 1 auto;
 }
 
-/* «Player dimostrativo»: alto 226, color/background/inverse. Le posizioni
-   orizzontali dei comandi sono misurate dal centro o dal bordo più vicino. */
-.player {
-  position: relative;
-  flex-shrink: 0;
-  height: 226px;
-  overflow: clip;
-  background: var(--color-background-inverse);
-  color: var(--brand-bianco);
-}
-
-.player button {
-  position: absolute;
-}
-
-.demo {
-  position: absolute;
-  left: 24px;
-  top: 20px;
-}
-
-.cc {
-  right: 76px;
-  top: 14px;
-  width: 32px;
-  height: 26px;
-  border-radius: var(--radius-xs);
-  background: var(--brand-bianco);
-  color: var(--color-text-primary);
-  text-align: center;
-}
-
-/* I button centrano il contenuto in verticale: il testo si posiziona a mano, a 7 px. */
-.cc > span {
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 32px;
-}
-
-.settings {
-  right: 28px;
-  top: 15px;
-  width: 24px;
-  height: 24px;
-}
-
-/* «Riproduci · comando centrale»: cerchio 60 centrato, con l'icona 24 al centro. */
-.play {
-  left: calc(50% - 30px);
-  top: 76px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-full);
-  background: var(--brand-bianco);
-}
-
-/* Indietro e avanti di 10 secondi: centri a 89 px dal centro. */
-.rewind,
-.forward {
-  top: 94px;
-  width: 24px;
-  height: 24px;
-}
-
-.rewind {
-  left: calc(50% - 89px - 12px);
-}
-
-.forward {
-  left: calc(50% + 89px - 12px);
-}
-
-.rewind > span,
-.forward > span {
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 24px;
-  text-align: center;
-}
-
-.track {
-  position: absolute;
-  left: 24px;
-  right: 24px;
-  top: 174px;
-  height: 3px;
-  border-radius: var(--radius-full);
-  background: var(--color-text-secondary);
-}
-
-.buffered,
-.elapsed {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 3px;
-  border-radius: var(--radius-full);
-}
-
-.buffered {
-  background: var(--color-text-muted);
-}
-
-.elapsed {
-  background: var(--brand-rosso-200);
-}
-
-.thumb {
-  position: absolute;
-  top: -3.5px;
-  width: 10px;
-  height: 10px;
-  border-radius: var(--radius-full);
-  background: var(--brand-rosso-200);
-}
-
-.volume {
-  left: 24px;
-  top: 190px;
-  width: 24px;
-  height: 24px;
-}
-
-.time {
-  position: absolute;
-  left: 60px;
-  top: 194px;
-}
-
-.speed {
-  right: 66px;
-  top: 194px;
-  width: 40px;
-  text-align: left;
-}
-
-.fullscreen {
-  right: 28px;
-  top: 190px;
-  width: 24px;
-  height: 24px;
-}
-
-/* «Titolo e dettagli»: alto 110. */
+/* «Titolo e dettagli»: padding 24, spazio 4. */
 .details {
-  flex-shrink: 0;
-  height: 110px;
-  padding: 18px var(--space-24) 0;
-  overflow: clip;
-  background: var(--brand-bianco);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-24);
+  background: var(--color-background-surface);
 }
 
 .meta {
-  margin-top: 16px;
   color: var(--color-text-secondary);
 }
 
-/* «Sottotitoli · stile testi»: alto 474, riempie fino in fondo. */
+/* «Sottotitoli · stile testi»: brand/rosso/400, padding 24; intestazione in alto,
+   frasi al centro dello spazio che resta. */
 .subtitles {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--space-24);
-  min-height: 474px;
   padding: var(--space-24);
-  overflow: clip;
-  background: var(--brand-rosso-200);
+  background: var(--brand-rosso-400);
 }
 
 .subtitlesHeader {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4px;
+  white-space: nowrap;
 }
 
+.language {
+  color: var(--brand-rosso-700);
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* Frasi non attive: brand/rosso/800 al 50%. */
 .line {
-  position: relative;
-  color: var(--color-text-secondary);
+  color: rgb(76 34 13 / 0.5);
 }
 
 .active {
-  color: var(--color-text-primary);
+  color: var(--brand-rosso-800);
 }
 
 /* Una riga per frase spezzata da Figma: sotto i 402 px va a capo da sola. */
 .subtitleLine {
   display: block;
-}
-
-/* «Indicatore frase attiva»: 3 px a 10 px dal bordo, alto quanto la frase. */
-.active::before {
-  content: '';
-  position: absolute;
-  left: -14px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--color-text-primary);
 }

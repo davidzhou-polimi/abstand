@@ -1,29 +1,34 @@
 import { Button } from '../components/Button'
 import { Grain } from '../components/Grain'
+import rings from '../assets/onboarding-rings.webp'
 import styles from './OnboardingComplete.module.css'
 
-/* Figma: «Onboarding complete» (173:309). La «Grana» è sia sul frame
-   sia sul suo «Screen», come nel file. */
+/* Figma: «Onboarding complete» (433:4518), con l'animazione di 3,5 s: il fondo chiaro
+   svanisce mentre gli anelli si allargano dal centro, poi entrano testo e pulsante.
+   In Figma l'animazione gira in loop per l'anteprima; qui parte una volta e resta ferma
+   sullo stato finale. */
 export function OnboardingComplete() {
   return (
     <main className={styles.page}>
       <Grain />
+      <div className={styles.veil} aria-hidden="true" />
+      <div className={styles.ringsFade} aria-hidden="true">
+        <img src={rings} alt="" className={styles.rings} />
+      </div>
       <div className={styles.screen}>
-        <Grain />
-        <div className={styles.content}>
-          <div className={styles.message}>
-            <p className="t-label-default">Profile created</p>
-            <h1 className="t-heading-h3">
-              Your program
-              <br />
-              is now active
-            </h1>
-          </div>
+        <div className={styles.message}>
+          <p className={`${styles.created} t-new-short`}>Profile created</p>
+          <h1 className={`${styles.title} t-heading-h3`}>
+            Your program
+            <br />
+            is now active
+          </h1>
         </div>
-        <p className={`${styles.waiting} t-body-small`}>Your first lesson is waiting.</p>
-        <Button to="/training" tone="inverse">
-          Start your journey
-        </Button>
+        <div className={styles.action}>
+          <Button to="/training" tone="inverse">
+            Start your journey
+          </Button>
+        </div>
       </div>
     </main>
   )

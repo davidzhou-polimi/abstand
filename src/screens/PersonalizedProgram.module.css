@@ -77,20 +77,15 @@
   overflow: clip;
 }
 
-/* Testo senza stile in Figma: Marund 5000, 18/28. */
-.monthTitle {
-  font: 500 18px/28px var(--font-sans);
-}
-
 .stats {
   padding-top: var(--space-4);
 }
 
-/* «Linea del percorso»: 1 × 72 a (22, 51), color/border/default. */
+/* «Linea del percorso»: 1 × 72 a (22, 63), color/border/default. */
 .line {
   position: absolute;
   left: 22px;
-  top: 51px;
+  top: 63px;
   width: 1px;
   height: 72px;
   background: var(--color-border-default);

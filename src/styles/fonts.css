@@ -1,22 +1,22 @@
-/* 26A1 Marund e Marund Mono (Daniel Wenzel). I file stanno in public/fonts.
-   Il numero dello stile corrisponde al peso: 3000 → 300, 5000 → 500, 7000 → 700. */
+/* 26A1 Marund Corner e Marund Mono Corner (Daniel Wenzel). I file stanno in public/fonts.
+   Il numero dello stile corrisponde al peso: 3002 → 300, 5002 → 500, 7002 → 700. */
 @font-face {
   font-family: 'Marund';
-  src: url('/fonts/Marund-3000Sharp.otf') format('opentype');
+  src: url('/fonts/Marund-3002Corner.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Marund';
-  src: url('/fonts/Marund-5000Sharp.otf') format('opentype');
+  src: url('/fonts/Marund-5002Corner.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Marund';
-  src: url('/fonts/Marund-7000Sharp.otf') format('opentype');
+  src: url('/fonts/Marund-7002Corner.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

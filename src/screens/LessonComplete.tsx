@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router'
 import { Button } from '../components/Button'
 import { OutlineButton } from '../components/OutlineButton'
 import closeIcon from '../assets/icon-close.svg'
 import completeIcon from '../assets/icon-lesson-complete.svg'
 import { allVideos, findVideo, month1 } from '../data/training'
+import { markCompleted } from '../data/progress'
 import styles from './LessonComplete.module.css'
 
-/* Figma: «Video 01 · Lesson complete» (174:648). */
-const feedbackOptions = ['A little', 'Somewhat', 'Very'] as const
+/* Figma: «Video 01 · Lesson complete» (434:4848). */
+const feedbackOptions = ['A little helpful', 'Somewhat helpful', 'Very helpful'] as const
 
 export function LessonComplete() {
   const { number = '' } = useParams()
   const found = findVideo(number)
   /* Variabili Figma «Feedback lezione 01 / utilita/…»: una scelta sola, facoltativa. */
   const [helpful, setHelpful] = useState<(typeof feedbackOptions)[number] | null>(null)
+  useEffect(() => {
+    if (found) markCompleted(found.video.number)
+  }, [found])
   if (!found) return <Navigate to="/training" replace />
   const { video } = found
   const index = allVideos.findIndex((v) => v.number === video.number)
@@ -24,7 +28,7 @@ export function LessonComplete() {
   return (
     <main className={styles.page}>
       <nav className={styles.nav}>
-        <p className={`${styles.path} t-label-small`}>
+        <p className="t-label-small">
           MONTH {month1.number} / {month1.title.toUpperCase()}
         </p>
         <Link to="/training" className={styles.close} aria-label="Close and back to your journey">
@@ -33,17 +37,12 @@ export function LessonComplete() {
       </nav>
 
       <section className={styles.confirmation}>
+        <p className="t-body-default">{video.title}</p>
         <div className={styles.badge}>
           <img src={completeIcon} width={48} height={48} alt="" />
-          <p className="t-label-small">VIDEO {video.number} / COMPLETED</p>
+          <h1 className="t-heading-h3">Lesson complete</h1>
         </div>
-        <h1 className={`${styles.title} t-heading-h3`}>
-          Lesson
-          <br />
-          complete.
-        </h1>
-        <p className={`${styles.lessonName} t-body-default`}>{video.title}</p>
-        <p className={`${styles.count} t-caption`}>
+        <p className="t-caption">
           {completed} OF {allVideos.length} LESSONS COMPLETED
         </p>
         <div className={styles.progress}>
@@ -51,51 +50,56 @@ export function LessonComplete() {
         </div>
       </section>
 
-      <section className={styles.feedback}>
-        <h2 className="t-body-large">How helpful was this?</h2>
-        <p className={`${styles.optional} t-body-small`}>Optional. You can continue without answering.</p>
-        <div className={styles.options} role="group" aria-label="How helpful was this?">
-          {feedbackOptions.map((option) => (
-            <button
-              key={option}
-              type="button"
-              aria-pressed={helpful === option}
-              onClick={() => setHelpful(helpful === option ? null : option)}
-              className={`${styles.option} t-body-small`}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      </section>
+      <div className={styles.feedbackWrap}>
+        <section className={styles.feedback}>
+          <h2 className="t-label-large">
+            How helpful was this?<span className={styles.optional}> (Optional)</span>
+          </h2>
+          <div className={styles.options} role="group" aria-label="How helpful was this?">
+            {feedbackOptions.map((option) => (
+              <button
+                key={option}
+                type="button"
+                aria-pressed={helpful === option}
+                onClick={() => setHelpful(helpful === option ? null : option)}
+                className={`${styles.option} t-new-short`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {next && (
         <section className={styles.next}>
           <h2 className="t-label-small">NEXT LESSON</h2>
           <div className={styles.nextCard}>
             <span className={styles.nextCover}>
-              <span className="t-heading-h3">{next.number}</span>
+              <span className="t-heading-h2">{next.number}</span>
             </span>
-            <span className={`${styles.nextTitle} t-heading-h4`}>
-              {next.nextLessonLines
-                ? next.nextLessonLines.map((line, i) => (
-                    <span key={line}>
-                      {i > 0 && <br />}
-                      {line}
-                    </span>
-                  ))
-                : next.title}
-            </span>
-            <span className={`${styles.nextMeta} t-caption`}>
-              VIDEO {next.number} · {next.minutes} MIN
+            <span className={styles.nextText}>
+              <span className={`${styles.nextMeta} t-caption`}>{`LESSON ${next.number}  ·  ${next.minutes} MIN`}</span>
+              <span className="t-body-large">
+                {next.nextLessonLines
+                  ? next.nextLessonLines.map((line, i) => (
+                      <span key={line}>
+                        {i > 0 && <br />}
+                        {line}
+                      </span>
+                    ))
+                  : next.title}
+              </span>
             </span>
           </div>
         </section>
       )}
 
       <div className={styles.actions}>
-        <Button>Next lesson</Button>
-        <OutlineButton to="/training">Back to your journey</OutlineButton>
+        <Button size="short">Next lesson</Button>
+        <OutlineButton to="/training" size="short">
+          Back to your journey
+        </OutlineButton>
       </div>
     </main>
   )
