@@ -6,21 +6,6 @@
   color: var(--color-text-primary);
 }
 
-/* «Intestazione dettaglio»: padding 24 / 20, etichetta a sinistra e chiusura a destra. */
-.header {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-20) var(--space-24);
-  background: var(--color-background-surface);
-}
-
-.close {
-  width: 24px;
-  height: 24px;
-}
-
 /* Fascia brand/rosso/400: padding 96 sopra, 24 sotto e ai lati; numero e titolo in fondo. */
 .band {
   display: flex;
@@ -68,8 +53,8 @@
   color: var(--color-text-secondary);
 }
 
-/* Pulsante largo 355 al centro, 24 dal fondo. */
+/* Pulsante finale con i margini comuni (base.css). */
 .action {
   flex-shrink: 0;
-  padding: 0 23.5px var(--space-24);
+  padding: 0 var(--page-side) var(--page-bottom);
 }

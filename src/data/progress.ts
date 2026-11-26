@@ -1,23 +1,19 @@
-/* Lezioni completate, salvate nel browser del telefono. Il player e «Lesson complete»
-   segnano la lezione; «Training videos» la mostra come fatta. */
-const KEY = 'abstand.completed'
+/* Lezioni completate durante questa visita. Il player e «Lesson complete» segnano la
+   lezione; «Training videos» la mostra come fatta. Per ora non si salva niente:
+   ricaricando la pagina l'elenco riparte da zero. */
+const completed = new Set<string>()
+
+/* Le versioni precedenti salvavano l'elenco nel browser: lo si toglie, così non torna. */
+try {
+  localStorage.removeItem('abstand.completed')
+} catch {
+  /* memoria del browser non disponibile: non c'è niente da togliere */
+}
 
 export function completedLessons(): string[] {
-  try {
-    const raw = localStorage.getItem(KEY)
-    const list = raw ? JSON.parse(raw) : []
-    return Array.isArray(list) ? list.filter((x) => typeof x === 'string') : []
-  } catch {
-    return []
-  }
+  return [...completed]
 }
 
 export function markCompleted(number: string) {
-  const list = completedLessons()
-  if (list.includes(number)) return
-  try {
-    localStorage.setItem(KEY, JSON.stringify([...list, number]))
-  } catch {
-    /* senza memoria del browser lo stato vale solo per questa visita */
-  }
+  completed.add(number)
 }

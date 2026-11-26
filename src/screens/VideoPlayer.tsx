@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
-import { Link, Navigate, useParams } from 'react-router'
-import backIcon from '../assets/icon-back.svg'
-import moreIcon from '../assets/icon-more.svg'
+import { Navigate, useParams } from 'react-router'
 import { DemoPlayer } from '../components/DemoPlayer'
+import { TopBar } from '../components/TopBar'
 import { findVideo, month1, videoDetails } from '../data/training'
 import { markCompleted } from '../data/progress'
 import styles from './VideoPlayer.module.css'
@@ -28,17 +27,11 @@ export function VideoPlayer() {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav}>
-        <Link to={`/training/video/${video.number}`} className={styles.icon} aria-label="Back">
-          <img src={backIcon} width={24} height={24} alt="" />
-        </Link>
-        <p className={`${styles.path} t-label-small`}>
-          MONTH {month1.number} / LESSON {video.number}
-        </p>
-        <button type="button" className={styles.icon} aria-label="More options">
-          <img src={moreIcon} width={24} height={24} alt="" />
-        </button>
-      </nav>
+      <TopBar
+        left={{ back: `/training/video/${video.number}` }}
+        label={`MONTH ${month1.number} / LESSON ${video.number}`}
+        right={null}
+      />
 
       <DemoPlayer label="DEMO VIDEO" elapsed={154} total={900} />
 

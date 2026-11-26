@@ -1,10 +1,10 @@
-/* «Screen»: padding 24 24 32, spazio 32 tra contenuto e pulsante. */
+/* «Screen»: margini comuni (base.css), spazio 32 tra contenuto e pulsante. */
 .page {
   display: flex;
   flex-direction: column;
   gap: var(--space-32);
   min-height: 100dvh;
-  padding: var(--space-24) var(--space-24) var(--space-32);
+  padding: var(--page-top) var(--page-side) var(--page-bottom);
   background: var(--color-background-canvas);
   color: var(--color-text-primary);
 }

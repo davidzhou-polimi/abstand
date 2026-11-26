@@ -5,21 +5,20 @@
   color: var(--color-text-primary);
 }
 
-/* «Intestazione · Mese 1»: in Figma a 76 px dall'alto, cioè 14 sotto la status bar,
-   alta 190; l'elenco comincia 4 px dopo. */
+/* «Intestazione · Mese 1» senza l'etichetta, che sta nella barra: margine in alto comune
+   (base.css); fra il separatore e la prima settimana restano i 15 px di Figma. */
 .header {
-  height: 190px;
-  margin: 14px var(--space-24) 4px;
-  overflow: clip;
-}
-
-.title {
-  margin-top: 12px;
+  margin: var(--page-top) var(--page-side) 15px;
 }
 
 .description {
   margin-top: 8px;
   color: var(--color-text-secondary);
+}
+
+/* Le due righe di Figma: sotto i 402 px ognuna va a capo per conto suo. */
+.description > span {
+  display: block;
 }
 
 .summary {
@@ -37,7 +36,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-12);
-  padding: 0 var(--space-24) var(--space-24);
+  padding: 0 var(--page-side) var(--page-bottom);
 }
 
 .week {
@@ -49,20 +48,22 @@
   padding-top: 12px;
 }
 
+/* Riga alta 116: copertina 100 e 16 fino al divisore. Il testo segue la copertina a 16 px;
+   se il titolo va su tre righe (schermi stretti) la riga si allunga invece di sovrapporsi. */
 .row {
   position: relative;
-  display: block;
+  display: flex;
   flex-shrink: 0;
-  height: 116px;
-  overflow: clip;
+  gap: var(--space-16);
+  min-height: 116px;
+  padding-bottom: var(--space-16);
   background: var(--color-background-surface);
 }
 
 /* Copertine: lezione brand/rosso/400, esercizio brand/rosso/600 (numero chiaro). */
 .cover {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  flex-shrink: 0;
   width: 112px;
   height: 100px;
   overflow: clip;
@@ -99,34 +100,28 @@
   top: 73.41px;
 }
 
+/* Come in Figma: meta a 2, titolo a 26, invito a 82 (in fondo alla copertina). */
 .text {
-  position: absolute;
-  left: 128px;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-
-.meta,
-.videoTitle,
-.cta {
-  position: absolute;
-  left: 0;
-  right: 0;
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  min-width: 1px;
+  min-height: 100px;
+  padding-top: 2px;
 }
 
 .meta {
-  top: 2px;
   white-space: pre-wrap;
   color: var(--color-text-secondary);
 }
 
 .videoTitle {
-  top: 26px;
+  margin-top: 6px;
 }
 
 .cta {
-  top: 82px;
+  margin-top: auto;
+  padding-top: 4px;
   white-space: pre-wrap;
   color: var(--color-text-secondary);
 }
@@ -136,7 +131,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 115px;
+  bottom: 0;
   height: 1px;
   background: var(--color-border-default);
 }

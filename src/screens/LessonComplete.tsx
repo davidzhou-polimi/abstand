@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Link, Navigate, useParams } from 'react-router'
+import { Navigate, useParams } from 'react-router'
 import { Button } from '../components/Button'
 import { OutlineButton } from '../components/OutlineButton'
-import closeIcon from '../assets/icon-close.svg'
+import { TopBar } from '../components/TopBar'
 import completeIcon from '../assets/icon-lesson-complete.svg'
 import { allVideos, findVideo, month1 } from '../data/training'
 import { markCompleted } from '../data/progress'
@@ -27,14 +27,12 @@ export function LessonComplete() {
 
   return (
     <main className={styles.page}>
-      <nav className={styles.nav}>
-        <p className="t-label-small">
-          MONTH {month1.number} / {month1.title.toUpperCase()}
-        </p>
-        <Link to="/training" className={styles.close} aria-label="Close and back to your journey">
-          <img src={closeIcon} width={24} height={24} alt="" />
-        </Link>
-      </nav>
+      {/* A lezione finita non si torna al player: la X riporta al percorso, a sinistra niente. */}
+      <TopBar
+        left={null}
+        label={`MONTH ${month1.number} / ${month1.title.toUpperCase()}`}
+        right={{ close: '/training', label: 'Close and back to your journey' }}
+      />
 
       <section className={styles.confirmation}>
         <p className="t-body-default">{video.title}</p>
@@ -82,9 +80,8 @@ export function LessonComplete() {
               <span className={`${styles.nextMeta} t-caption`}>{`LESSON ${next.number}  ·  ${next.minutes} MIN`}</span>
               <span className="t-body-large">
                 {next.nextLessonLines
-                  ? next.nextLessonLines.map((line, i) => (
-                      <span key={line}>
-                        {i > 0 && <br />}
+                  ? next.nextLessonLines.map((line) => (
+                      <span key={line} className={styles.nextLine}>
                         {line}
                       </span>
                     ))

@@ -24,7 +24,7 @@ export function ProfileCreation() {
   }
 
   return (
-    <form className={`${frame.screen} ${styles.screen}`} onSubmit={handleSubmit}>
+    <form className={frame.screen} onSubmit={handleSubmit}>
       <h1 className={`${styles.title} t-heading-h4`}>Complete your profile</h1>
       <div className={styles.fields}>
         <FormInput label="First name" name="first-name" autoComplete="given-name" value={firstName} onChange={setFirstName} />

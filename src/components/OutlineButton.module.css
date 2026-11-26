@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  min-height: var(--button-height);
   padding: calc(var(--space-12) + var(--hairline)) calc(var(--space-16) + var(--hairline));
   border-radius: var(--radius-md);
   text-align: center;
@@ -16,9 +17,8 @@
   color: var(--color-text-primary);
 }
 
-/* In Figma è alto 51, senza bordo. */
+/* Senza bordo. */
 .dark {
-  min-height: 51px;
   padding-block: var(--space-12);
   background: var(--color-action-primary);
   color: var(--color-action-on-primary);

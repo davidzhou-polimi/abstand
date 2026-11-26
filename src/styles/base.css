@@ -54,6 +54,13 @@ img {
    e il mezzo pixel si aggiunge al padding, come conta Figma. */
 :root {
   --hairline: 0.5px;
+  /* Margini comuni a tutte le schermate: 24 ai lati e in alto, 40 sotto il pulsante finale.
+     I pulsanti a tutta larghezza sono alti 54, qualunque sia lo stile del testo,
+     così passando da una schermata all'altra non cambiano posizione. */
+  --page-side: var(--space-24);
+  --page-top: var(--space-24);
+  --page-bottom: var(--space-40);
+  --button-height: 54px;
 }
 
 /* Le schermate Figma sono larghe 402 px. Sotto quella larghezza il testo va a capo
@@ -74,6 +81,7 @@ img {
   .t-heading-h3,
   .t-heading-h4,
   .t-body-large,
+  .t-body-large > span,
   .t-heading-h3 > span,
   .t-heading-h4 > span {
     text-wrap: balance;

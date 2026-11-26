@@ -1,0 +1,39 @@
+/* 402 × 64, padding 20 / 24, icone da 24 ai lati ed etichetta al centro.
+   Fondo sfumato da brand/neutro/100 a color/background/surface (444:5703).
+   Resta in alto quando la pagina scorre: il contenuto le passa sotto. */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  flex-shrink: 0;
+  grid-template-columns: 24px 1fr 24px;
+  align-items: center;
+  gap: var(--space-16);
+  padding: var(--space-20) var(--page-side);
+  background: linear-gradient(to bottom, var(--brand-neutro-100), var(--color-background-surface));
+  color: var(--color-text-primary);
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.inert {
+  cursor: default;
+}
+
+.label {
+  text-align: center;
+  white-space: nowrap;
+}

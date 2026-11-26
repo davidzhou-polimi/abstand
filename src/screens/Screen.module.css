@@ -1,11 +1,11 @@
 /* Telaio comune alle schermate con il pulsante in fondo (frame «Screen» in Figma):
-   padding 24 24 40, spazio 24, colonna centrata. La status bar iOS non c'è. */
+   margini comuni (base.css), spazio 24, colonna centrata. La status bar iOS non c'è. */
 .screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-24);
   min-height: 100dvh;
-  padding: var(--space-24) var(--space-24) var(--space-40);
+  padding: var(--page-top) var(--page-side) var(--page-bottom);
   background: var(--color-background-canvas);
 }

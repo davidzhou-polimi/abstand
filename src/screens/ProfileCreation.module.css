@@ -1,9 +1,3 @@
-/* In Figma (281:4446) il frame non ha auto layout: titolo a 24, campi a 80, consensi e
-   pulsante a 497 su uno schermo alto 812, quindi 61 px sotto il pulsante. */
-.screen {
-  padding-bottom: 61px;
-}
-
 .title {
   width: 100%;
   color: var(--color-text-primary);

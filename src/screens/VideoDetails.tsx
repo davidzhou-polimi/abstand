@@ -1,6 +1,6 @@
-import { Link, Navigate, useParams } from 'react-router'
+import { Navigate, useParams } from 'react-router'
 import { OutlineButton } from '../components/OutlineButton'
-import closeIcon from '../assets/icon-close.svg'
+import { TopBar } from '../components/TopBar'
 import { findVideo, month1, videoDetails } from '../data/training'
 import styles from './VideoDetails.module.css'
 
@@ -14,14 +14,7 @@ export function VideoDetails() {
 
   return (
     <main className={styles.page}>
-      <header className={styles.header}>
-        <p className="t-label-small">
-          MONTH {month1.number} / LESSON {video.number}
-        </p>
-        <Link to="/training" className={styles.close} aria-label="Close">
-          <img src={closeIcon} width={24} height={24} alt="" />
-        </Link>
-      </header>
+      <TopBar left={{ back: '/training' }} label={`MONTH ${month1.number} / LESSON ${video.number}`} right={null} />
 
       <div className={styles.band}>
         <p className="t-heading-h1">{video.number}</p>

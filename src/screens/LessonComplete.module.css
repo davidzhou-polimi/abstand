@@ -6,20 +6,6 @@
   color: var(--color-text-primary);
 }
 
-/* «Navigazione fine lezione»: padding 24 / 20. */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-20) var(--space-24);
-  background: var(--color-background-surface);
-}
-
-.close {
-  width: 24px;
-  height: 24px;
-}
-
 /* «Conferma e progresso»: brand/rosso/400, padding 24 / 20, spazio 16. */
 .confirmation {
   display: flex;
@@ -129,14 +115,18 @@
   color: var(--color-text-secondary);
 }
 
-/* «Prosegui nel percorso»: alto 146, pulsanti a 8 e a 76; resta in fondo allo schermo. */
+/* Le righe del titolo spezzate a mano in Figma: sotto i 402 px ognuna va a capo per conto suo. */
+.nextLine {
+  display: block;
+}
+
+/* «Prosegui nel percorso»: resta in fondo allo schermo, con i margini comuni (base.css). */
 .actions {
   margin-top: auto;
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
   flex-shrink: 0;
-  min-height: 146px;
-  padding: 8px var(--space-24) var(--space-24);
+  padding: 8px var(--page-side) var(--page-bottom);
   background: var(--color-background-surface);
 }

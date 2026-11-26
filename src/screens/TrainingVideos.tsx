@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import doneIcon from '../assets/icon-done.svg'
+import { TopBar } from '../components/TopBar'
 import { month1, videoDetails, type Video } from '../data/training'
 import { completedLessons } from '../data/progress'
 import styles from './TrainingVideos.module.css'
@@ -14,13 +15,14 @@ export function TrainingVideos() {
 
   return (
     <main className={styles.page}>
+      {/* Prima schermata dopo l'onboarding: logo a sinistra e menu (che per ora non si apre).
+          L'etichetta «YOUR TRAINING / MONTH 01» è passata dall'intestazione alla barra. */}
+      <TopBar left={{ logo: true }} label={`YOUR TRAINING / MONTH ${month1.number}`} right={{ menu: true }} />
       <header className={styles.header}>
-        <p className="t-label-small">YOUR TRAINING / MONTH {month1.number}</p>
-        <h1 className={`${styles.title} t-heading-h3`}>{month1.title}</h1>
+        <h1 className="t-heading-h3">{month1.title}</h1>
         <p className={`${styles.description} t-body-large`}>
-          {month1.description[0]}
-          <br />
-          {month1.description[1]}
+          <span>{month1.description[0]}</span>
+          <span>{month1.description[1]}</span>
         </p>
         <p className={`${styles.summary} t-caption`}>{month1.summary}</p>
         <hr className={styles.separator} />

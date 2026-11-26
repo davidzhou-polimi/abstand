@@ -79,7 +79,7 @@
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
-  padding: var(--space-24) var(--space-24) var(--space-40);
+  padding: var(--page-top) var(--page-side) var(--page-bottom);
 }
 
 /* Testo a 218 px dall'inizio del contenuto. */
