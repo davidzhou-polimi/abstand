@@ -1,27 +1,39 @@
+/* In Figma (281:4446) il frame non ha auto layout: titolo a 24, campi a 80, consensi e
+   pulsante a 497 su uno schermo alto 812, quindi 61 px sotto il pulsante. */
+.screen {
+  padding-bottom: 61px;
+}
+
 .title {
   width: 100%;
-  color: var(--brand-nero);
+  color: var(--color-text-primary);
 }
 
-/* In Figma il frame è alto quanto il contenuto, quindi consensi e pulsante stanno
-   sempre in fondo: sullo schermo più alto lo spazio in più va qui, sotto le persone. */
-.content {
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  gap: var(--space-32);
-  width: 100%;
-}
-
-.group {
+.fields {
   display: flex;
   flex-direction: column;
   gap: var(--space-16);
   width: 100%;
 }
 
+/* Consensi e pulsante stanno in fondo: sullo schermo più alto lo spazio in più va sopra. */
+.end {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  width: 100%;
+  margin-top: auto;
+}
+
 .consents {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+/* «Terms and Conditions»: stesso stile della frase, sottolineato. */
+.terms {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
 }

@@ -1,3 +1,9 @@
+/* Fondo del frame: sfumatura radiale centrata in alto, raggio 874 (l'altezza del frame)
+   in entrambe le direzioni e stirata con il frame, quindi 874/402 della larghezza. */
+.screen {
+  background: radial-gradient(ellipse 217.41% 100% at 50% 0, var(--stops));
+}
+
 .content {
   display: flex;
   flex: 1 0 auto;
@@ -16,45 +22,32 @@
   width: 100%;
 }
 
-/* Rettangolo 185 × 185, radius/lg, sfumatura radiale da brand/rosso al centro
-   a brand/blu a 121 px, con l'effetto «Grana». */
-.illustration {
+.symbol {
   position: relative;
   flex-shrink: 0;
-  width: 185px;
-  height: 185px;
-  border-radius: var(--radius-lg);
-  background: radial-gradient(circle 121px at 50% 50%, var(--brand-rosso), var(--brand-blu));
+  width: 138px;
+  height: 132px;
 }
 
-/* Gruppo 138,12 × 126,2 a (24, 30); l'SVG include 1 px di tratto per lato. */
-.drawing {
+.symbol img {
   position: absolute;
-  left: 23px;
-  top: 29px;
+  max-width: none;
 }
 
+/* «Your emotional profile» a 0, il nome a 26: 20 di interlinea e 6 di spazio. */
 .heading {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   width: 100%;
   text-align: center;
-  color: var(--color-text-primary);
+  color: var(--color-text-inverse);
 }
 
-.name {
-  font-weight: 500;
-}
-
-/* In Figma il riquadro è largo 356 su una colonna di 354 (sporge di 1 px per lato),
-   bordo 1 px color/border/default compreso nella misura. */
 .description {
-  width: calc(100% + 2px);
-  margin-inline: -1px;
+  width: 100%;
   padding: var(--space-24);
   background: var(--color-background-surface);
-  border: 1px solid var(--color-border-default);
   border-radius: var(--radius-lg);
   text-align: center;
   color: var(--color-text-primary);

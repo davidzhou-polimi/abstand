@@ -1,12 +1,20 @@
+import { useEffect } from 'react'
 import { Button } from '../components/Button'
 import { DemoPlayer } from '../components/DemoPlayer'
 import lockIcon from '../assets/icon-lock.svg'
+import rings from '../assets/onboarding-rings.webp'
 import { programGoal, programMonths } from '../data/program'
 import frame from './Screen.module.css'
 import styles from './PersonalizedProgram.module.css'
 
 /* Figma: «Personalized program» (433:4409), con il video introduttivo. */
 export function PersonalizedProgram() {
+  /* Gli anelli della schermata successiva pesano mezzo mega: si scaricano già qui,
+     così l'animazione di «Onboarding complete» non li aspetta. */
+  useEffect(() => {
+    new Image().src = rings
+  }, [])
+
   return (
     <main className={frame.screen}>
       <div className={styles.content}>

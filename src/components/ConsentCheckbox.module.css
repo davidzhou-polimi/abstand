@@ -4,7 +4,10 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  min-height: 44px;
+  /* In Figma ogni riga è alta almeno 44 con il testo centrato: fra due clausole su due
+     righe restavano 4 px, prima di una su una riga 14. Con 8 sopra e sotto restano
+     16 px fra un testo e l'altro, come fra i campi del modulo. */
+  padding-block: var(--space-8);
   cursor: pointer;
 }
 
@@ -23,8 +26,8 @@
 }
 
 .empty {
-  background: var(--brand-neutro-50);
-  box-shadow: inset 0 0 0 var(--hairline) var(--color-border-strong);
+  background: var(--color-background-surface);
+  border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-xs);
 }
 

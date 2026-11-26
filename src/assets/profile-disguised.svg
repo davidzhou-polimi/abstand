@@ -1,33 +1,9 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="140.12" height="128.2" viewBox="0 0 140.12 128.2" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Group">
-<g id="Ellisse 1">
-<path id="Vector" d="M65.52 127.2C86.6173 127.2 103.72 98.9492 103.72 64.1C103.72 29.2508 86.6173 1 65.52 1C44.4227 1 27.32 29.2508 27.32 64.1C27.32 98.9492 44.4227 127.2 65.52 127.2Z" fill="url(#paint0_radial_0_18)" stroke-width="2" stroke-miterlimit="100" stroke="#F9F4E9"/>
-</g>
-<g id="Ellisse 1_2">
-<path id="Vector_2" d="M7.47 57.74C3.89 57.74 1 59.51 1 61.69C1 63.87 3.89 65.65 7.47 65.65C11.05 65.65 13.94 63.88 13.94 61.69C13.94 59.5 11.04 57.74 7.47 57.74Z" fill="url(#paint1_radial_0_18)" stroke-width="2" stroke-miterlimit="100" stroke="#F9F4E9"/>
-</g>
-<g id="Group_2">
-<path id="Vector_3" d="M70.04 70.93C70.04 70.93 71.91 70.85 75.01 70.4" stroke-width="2" stroke-miterlimit="100" stroke-linecap="round" stroke="#F9F4E9"/>
-<path id="Vector_4" d="M83.73 68.64C85.0122 68.3094 86.3534 67.9318 87.7397 67.5007M130.96 25.91C130.554 27.2734 130.113 28.5956 129.64 29.8779M95.5716 64.6192C98.0302 63.5646 100.542 62.3353 103.046 60.9024M110.013 56.3135C112.178 54.6777 114.29 52.8597 116.308 50.8392M121.755 44.5272C123.363 42.3612 124.863 40.018 126.223 37.4832" stroke-width="2" stroke-miterlimit="100" stroke-linecap="round" stroke="#F9F4E9"/>
-<path id="Vector_5" d="M132.09 21.6C132.45 20.0133 132.763 18.3767 133.03 16.69" stroke-width="2" stroke-miterlimit="100" stroke-linecap="round" stroke="#F9F4E9"/>
-</g>
-<path id="Vector_6" d="M11.96 64.93C11.96 64.93 16.2 71.06 27.15 71.65" stroke-width="2" stroke-miterlimit="100" stroke="#F9F4E9"/>
-<g id="Ellisse 2">
-<path id="Vector_7" d="M133.03 16.09C136.393 16.09 139.12 13.4709 139.12 10.24C139.12 7.00914 136.393 4.39 133.03 4.39C129.667 4.39 126.94 7.00914 126.94 10.24C126.94 13.4709 129.667 16.09 133.03 16.09Z" fill="url(#paint2_radial_0_18)" stroke-width="2" stroke-miterlimit="100" stroke="#F9F4E9"/>
-</g>
-</g>
-<defs>
-<radialGradient id="paint0_radial_0_18" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(65.52 64.1) rotate(90) scale(82.5416 49.9697)">
-<stop stop-color="#C04908"/>
-<stop offset="1" stop-color="#4B7397"/>
-</radialGradient>
-<radialGradient id="paint1_radial_0_18" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(7.47 61.695) rotate(90) scale(5.17357 8.46346)">
-<stop stop-color="#C04908"/>
-<stop offset="1" stop-color="#4B7397"/>
-</radialGradient>
-<radialGradient id="paint2_radial_0_18" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(133.03 10.24) rotate(90) scale(7.65244 7.96637)">
-<stop stop-color="#C04908"/>
-<stop offset="1" stop-color="#4B7397"/>
-</radialGradient>
-</defs>
+<svg width="142" height="132" viewBox="0 0 142 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M104.22 66.0004C104.22 100.85 87.1171 129.1 66.0198 129.1C44.9225 129.1 27.8198 100.85 27.8198 66.0004C27.8198 31.1512 44.9225 2.90039 66.0198 2.90039C87.1171 2.90039 104.22 31.1512 104.22 66.0004Z" stroke-width="3" stroke-miterlimit="100" stroke="#FDFBF7"/>
+<path d="M7.97 59.6406C4.39 59.6406 1.5 61.4106 1.5 63.5906C1.5 65.7706 4.39 67.5506 7.97 67.5506C11.55 67.5506 14.44 65.7806 14.44 63.5906C14.44 61.4006 11.54 59.6406 7.97 59.6406Z" stroke-width="3" stroke-miterlimit="100" stroke="#FDFBF7"/>
+<path d="M70.54 72.8308C70.54 72.8308 72.41 72.7508 75.51 72.3008" stroke-width="3" stroke-miterlimit="100" stroke-linecap="square" stroke="#FDFBF7"/>
+<path d="M84.23 70.5406C85.5121 70.2099 86.8534 69.8324 88.2397 69.4013M131.46 27.8105C131.054 29.174 130.613 30.4962 130.14 31.7784M96.0715 66.5197C98.5302 65.4652 101.042 64.2359 103.546 62.803M110.513 58.214C112.678 56.5783 114.79 54.7603 116.808 52.7397M122.255 46.4277C123.863 44.2618 125.363 41.9186 126.723 39.3838" stroke-width="3" stroke-miterlimit="100" stroke-linecap="square" stroke="#FDFBF7"/>
+<path d="M132.59 23.5008C132.95 21.9142 133.263 20.2775 133.53 18.5908" stroke-width="3" stroke-miterlimit="100" stroke-linecap="square" stroke="#FDFBF7"/>
+<path d="M12.46 66.8301C12.46 66.8301 16.7 72.9601 27.65 73.5501" stroke-width="3" stroke-miterlimit="100" stroke="#FDFBF7"/>
+<path d="M139.62 12.14C139.62 15.3709 136.893 17.9901 133.53 17.9901C130.167 17.9901 127.44 15.3709 127.44 12.14C127.44 8.90918 130.167 6.29004 133.53 6.29004C136.893 6.29004 139.62 8.90918 139.62 12.14Z" stroke-width="3" stroke-miterlimit="100" stroke="#FDFBF7"/>
 </svg>
