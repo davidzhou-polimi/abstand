@@ -81,6 +81,25 @@
   padding-top: var(--space-4);
 }
 
+/* Dopo il GOAL viene Mind: la riga del GOAL ha lo spazio e la linea fino a Mind. */
+.goalThen {
+  padding-bottom: var(--space-40);
+}
+
+.line.goalLine {
+  top: 52px;
+  height: 40px;
+}
+
+/* Mind è l'ultima riga: niente spazio sotto. */
+.lastMonth {
+  padding-bottom: 0;
+}
+
+.statsLine {
+  display: inline;
+}
+
 /* «Linea del percorso»: 1 × 72 a (22, 63), color/border/default. */
 .line {
   position: absolute;

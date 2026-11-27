@@ -99,6 +99,20 @@
   background: var(--brand-rosso-400);
 }
 
+/* Se la prossima è un esercizio guidato, la copertina è quella degli esercizi nella lista. */
+.nextCoverExercise {
+  background: var(--brand-rosso-600);
+  color: var(--color-text-inverse);
+}
+
+/* Mind: il simbolo di Absolute al posto del numero, come nella lista. */
+.nextSymbol {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .nextCover > span {
   position: absolute;
   left: 10px;

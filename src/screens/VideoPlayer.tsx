@@ -1,7 +1,7 @@
 import { Navigate, useParams } from 'react-router'
 import { DemoPlayer } from '../components/DemoPlayer'
 import { TopBar } from '../components/TopBar'
-import { findVideo, month1, videoDetails } from '../data/training'
+import { CURRENT_MONTH, lessonInMonth, lessonMeta } from '../data/training'
 import styles from './VideoPlayer.module.css'
 
 /* Figma: «Video 01 · Player and subtitles» (434:5170). Il player è dimostrativo:
@@ -14,26 +14,25 @@ const subtitles = [
 
 export function VideoPlayer() {
   const { number = '' } = useParams()
-  const found = findVideo(number)
-  const playable = Boolean(found && videoDetails[number])
-  if (!found || !playable) return <Navigate to="/training" replace />
-  const { video, week } = found
+  const found = lessonInMonth(number)
+  if (!found) return <Navigate to="/training" replace />
+  const { module, lesson, week } = found
 
   return (
     <main className={styles.page}>
       <TopBar
-        left={{ back: `/training/video/${video.number}` }}
-        label={`MONTH ${month1.number} / LESSON ${video.number}`}
+        left={{ back: `/training/video/${lesson.number}` }}
+        label={`MONTH ${CURRENT_MONTH} / WEEK ${week}`}
         right={null}
       />
 
       {/* Il video è dimostrativo: play porta a «Lesson complete», che segna la lezione come fatta. */}
-      <DemoPlayer label="DEMO VIDEO" elapsed={154} total={900} playTo={`/training/video/${video.number}/complete`} />
+      <DemoPlayer label="DEMO VIDEO" elapsed={154} total={900} playTo={`/training/video/${lesson.number}/complete`} />
 
       <div className={styles.details}>
-        <h1 className="t-heading-h4">{video.title}</h1>
+        <h1 className="t-heading-h4">{lesson.title}</h1>
         <p className={`${styles.meta} t-caption`}>
-          {month1.title.toUpperCase()} · WEEK {week.number} · {video.minutes} MIN
+          {lessonMeta(module, lesson)}
         </p>
       </div>
 
