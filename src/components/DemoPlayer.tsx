@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import settingsIcon from '../assets/icon-settings.svg'
 import playIcon from '../assets/icon-play.svg'
 import rewindIcon from '../assets/icon-rewind-10.svg'
@@ -16,17 +17,18 @@ type Props = {
   total: number
   /* «Video caricato»: frazione della barra, 148 / 354 nel mock */
   buffered?: number
-  tone?: 'lesson' | 'intro'
   rounded?: boolean
+  /* Il video è finto: dove c'è, play porta direttamente a questa pagina. */
+  playTo?: string
 }
 
 const mmss = (s: number) => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.round(s % 60)).padStart(2, '0')}`
 
-export function DemoPlayer({ label, elapsed, total, buffered = 148 / 354, tone = 'lesson', rounded = false }: Props) {
+export function DemoPlayer({ label, elapsed, total, buffered = 148 / 354, rounded = false, playTo }: Props) {
   const progress = Math.min(1, Math.max(0, elapsed / total))
   return (
     <section
-      className={`${styles.player} ${styles[tone]} ${rounded ? styles.rounded : ''}`}
+      className={`${styles.player} ${rounded ? styles.rounded : ''}`}
       aria-label="Video player"
       style={{ ['--progress' as string]: progress, ['--buffered' as string]: buffered }}
     >
@@ -41,9 +43,15 @@ export function DemoPlayer({ label, elapsed, total, buffered = 148 / 354, tone =
         <img src={rewindIcon} alt="" />
         <span>10</span>
       </button>
-      <button type="button" className={styles.play} aria-label="Play">
-        <img src={playIcon} alt="" />
-      </button>
+      {playTo ? (
+        <Link to={playTo} className={styles.play} aria-label="Play">
+          <img src={playIcon} alt="" />
+        </Link>
+      ) : (
+        <button type="button" className={styles.play} aria-label="Play">
+          <img src={playIcon} alt="" />
+        </button>
+      )}
       <button type="button" className={styles.forward} aria-label="Forward 10 seconds">
         <img src={forwardIcon} alt="" />
         <span>10</span>

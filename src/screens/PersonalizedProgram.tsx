@@ -24,7 +24,7 @@ export function PersonalizedProgram() {
           personalized program
         </h1>
         {/* Video introduttivo dimostrativo: 00:34 su 02:30, come nel mock. */}
-        <DemoPlayer label="INTRO VIDEO" elapsed={34} total={150} tone="intro" rounded />
+        <DemoPlayer label="INTRO VIDEO" elapsed={34} total={150} rounded />
         <div className={styles.schemaWrap}>
           <ol className={styles.schema}>
             {programMonths.map((month, index) => (

@@ -120,7 +120,7 @@
 
 .elapsed {
   width: calc(var(--progress) * 100%);
-  background: var(--player-progress);
+  background: var(--brand-neutro-300);
 }
 
 .thumb {
@@ -128,18 +128,11 @@
   top: calc(-3.5 * var(--u)) !important;
   width: calc(10 * var(--u));
   height: calc(10 * var(--u)) !important;
-  background: var(--player-progress);
+  background: var(--brand-neutro-300);
 }
 
-/* Avanzamento: brand/neutro/300 nella lezione, brand/rosso/300 nel video introduttivo. */
-.lesson {
-  --player-progress: var(--brand-neutro-300);
-}
-
-.intro {
-  --player-progress: var(--brand-rosso-300);
-}
-
+/* Avanzamento: brand/neutro/300, nella lezione come nel video introduttivo
+   (il riferimento è il player della lezione 1). */
 .volume,
 .fullscreen {
   top: calc(190 * var(--u));

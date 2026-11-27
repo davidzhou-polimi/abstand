@@ -1,9 +1,7 @@
-import { useEffect } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { DemoPlayer } from '../components/DemoPlayer'
 import { TopBar } from '../components/TopBar'
 import { findVideo, month1, videoDetails } from '../data/training'
-import { markCompleted } from '../data/progress'
 import styles from './VideoPlayer.module.css'
 
 /* Figma: «Video 01 · Player and subtitles» (434:5170). Il player è dimostrativo:
@@ -18,10 +16,6 @@ export function VideoPlayer() {
   const { number = '' } = useParams()
   const found = findVideo(number)
   const playable = Boolean(found && videoDetails[number])
-  /* Il video è dimostrativo: aprirlo vale come guardarlo, e la lista lo segna come fatto. */
-  useEffect(() => {
-    if (playable) markCompleted(number)
-  }, [playable, number])
   if (!found || !playable) return <Navigate to="/training" replace />
   const { video, week } = found
 
@@ -33,7 +27,8 @@ export function VideoPlayer() {
         right={null}
       />
 
-      <DemoPlayer label="DEMO VIDEO" elapsed={154} total={900} />
+      {/* Il video è dimostrativo: play porta a «Lesson complete», che segna la lezione come fatta. */}
+      <DemoPlayer label="DEMO VIDEO" elapsed={154} total={900} playTo={`/training/video/${video.number}/complete`} />
 
       <div className={styles.details}>
         <h1 className="t-heading-h4">{video.title}</h1>
